@@ -4,7 +4,7 @@
   "type": "library",
   "license": "MIT",
   "homepage": "https://github.com/flextype-components/event",
-  "description": "",
+  "description": "Event Component provides a versatile tool to manage events in your app.",
   "authors": [
     {
         "name": "Sergey Romanenko",
