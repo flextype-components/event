@@ -94,7 +94,7 @@ class Event
     public static function dispatch(string $event, array $args = [], bool $return = false)
     {
         // is there some registered $listeners ?
-        if (count(static::$listeners) > 0) {
+        if (isset(static::$listeners[$event]) && count(static::$listeners[$event]) > 0) {
 
             // Get all listeners for given event.
             $listeners = static::$listeners[$event];
