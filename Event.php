@@ -21,7 +21,7 @@ class Event
      * @var array
      * @access protected
      */
-    public static $listeners = [];
+    private static $listeners = [];
 
     /**
      * Add new listener

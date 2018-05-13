@@ -1,3 +1,6 @@
+# v1.0.3, 2018-05-13
+* Change public static $listeners to private static $listeners
+
 # v1.0.2, 2018-04-27
 * Fix for dispatch() method
 
