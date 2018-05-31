@@ -38,7 +38,7 @@ class Event
      */
     public static function addListener(string $event, $function, int $priority = 10, array $args = null) : void
     {
-        static::$listeners[$event][$priority][] = [
+        Event::$listeners[$event][$priority][] = [
             'function'  => $function,
             'args'      => $args
         ];
@@ -55,8 +55,8 @@ class Event
      */
     public static function removeAllListeners(string $event) : void
     {
-        if (static::hasListeners($event)) {
-            unset(static::$listeners[$event]);
+        if (Event::hasListeners($event)) {
+            unset(Event::$listeners[$event]);
         }
     }
 
@@ -73,7 +73,7 @@ class Event
      */
     public static function hasListeners(string $event) : bool
     {
-        if (! isset(static::$listeners[$event]) || count(static::$listeners[$event]) === 0) {
+        if (! isset(Event::$listeners[$event]) || count(Event::$listeners[$event]) === 0) {
             return false;
         }
 
@@ -94,10 +94,10 @@ class Event
     public static function dispatch(string $event, array $args = [], bool $return = false)
     {
         // is there some registered $listeners ?
-        if (isset(static::$listeners[$event]) && count(static::$listeners[$event]) > 0) {
+        if (isset(Event::$listeners[$event]) && count(Event::$listeners[$event]) > 0) {
 
             // Get all listeners for given event.
-            $listeners = static::$listeners[$event];
+            $listeners = Event::$listeners[$event];
 
             // Sort by priority
             krsort($listeners);
