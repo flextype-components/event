@@ -39,5 +39,10 @@ Dispatch all listeners of the given event.
 Event::dispatch('event_name');
 ```
 
+Get listeners array
+```php
+$listeners = Event::getListeners();
+```
+
 ## License
 See [LICENSE](https://github.com/flextype-components/event/blob/master/LICENSE)
