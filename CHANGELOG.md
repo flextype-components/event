@@ -1,3 +1,6 @@
+# v1.0.4, 2018-05-31
+* New method getListeners() added.
+
 # v1.0.3, 2018-05-13
 * Change public static $listeners to private static $listeners
 

@@ -14,7 +14,6 @@ namespace Flextype\Component\Event;
 
 class Event
 {
-
     /**
      * The registered listeners.
      *
@@ -30,10 +29,10 @@ class Event
      * Event::addListener('event_name', function() { echo 'Test Event 2'; }, 2);
      *
      * @access public
-     * @param string  $event           Event name
-     * @param mixed   $function  Function to add
-     * @param integer $priority        Priority. Default is 10
-     * @param array   $args            Function aguments
+     * @param  string  $event     Event name
+     * @param  mixed   $function  Function to add
+     * @param  integer $priority  Priority. Default is 10
+     * @param  array   $args      Function aguments
      * @return void
      */
     public static function addListener(string $event, $function, int $priority = 10, array $args = null) : void
@@ -45,12 +44,25 @@ class Event
     }
 
     /**
+     * Get listeners array
+     *
+     * $listeners = Event::getListeners();
+     *
+     * @access public
+     * @return array
+     */
+    public static function getListeners() : array
+    {
+        return Event::$listeners;
+    }
+
+    /**
      * Remove all listeners for current event.
      *
      * Event::removeAllListeners('event_name');
      *
      * @access public
-     * @param string  $event Event name
+     * @param  string  $event Event name
      * @return void
      */
     public static function removeAllListeners(string $event) : void
@@ -68,8 +80,8 @@ class Event
      * }
      *
      * @access public
-     * @param string  $event       Event name
-     * @return bool   $return      Return data or not. Default is false
+     * @param  string  $event       Event name
+     * @return bool    $return      Return data or not. Default is false
      */
     public static function hasListeners(string $event) : bool
     {
@@ -86,9 +98,9 @@ class Event
      * Event::dispatch('event_name');
      *
      * @access public
-     * @param string  $event       Event name
-     * @param array   $args        Arguments
-     * @param bool    $return      Return data or not. Default is false
+     * @param  string  $event       Event name
+     * @param  array   $args        Arguments
+     * @param  bool    $return      Return data or not. Default is false
      * @return mixed
      */
     public static function dispatch(string $event, array $args = [], bool $return = false)

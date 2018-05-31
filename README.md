@@ -1,6 +1,6 @@
 # Event Component
-![version](https://img.shields.io/badge/version-1.0.3-brightgreen.svg?style=flat-square "Version")
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-components/event/blob/master/LICENSE)
+![version](https://img.shields.io/badge/version-1.0.4-brightgreen.svg?style=flat-square)
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
 Event Component provides a versatile tool to manage events in your app.
 
